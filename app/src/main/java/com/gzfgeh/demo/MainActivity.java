@@ -13,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         PullToZoomScrollViewEx scrollView = (PullToZoomScrollViewEx) findViewById(R.id.scroll_view);
-        scrollView.setAllView(R.layout.scroll_head_view, R.layout.profile_zoom_view, R.layout.scroll_head_view);
+        scrollView.setAllView(R.layout.scroll_head_view, R.layout.profile_zoom_view, R.layout.scroll_head_view, 1/4);
     }
 }

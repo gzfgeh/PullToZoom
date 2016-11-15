@@ -220,7 +220,7 @@ public class PullToZoomScrollViewEx extends PullToZoomBase<ScrollView> {
     }
 
 
-    public void setAllView(int resHeadView, int resZoomView, int resContentView){
+    public void setAllView(int resHeadView, int resZoomView, int resContentView, float percentWidth){
         View headView = LayoutInflater.from(getContext()).inflate(resHeadView, null,false);
         View zoomView = LayoutInflater.from(getContext()).inflate(resZoomView, null, false);
         View contentView = LayoutInflater.from(getContext()).inflate(resContentView, null, false);
@@ -228,8 +228,8 @@ public class PullToZoomScrollViewEx extends PullToZoomBase<ScrollView> {
         setZoomView(zoomView);
         setScrollContentView(contentView);
 
-        int mScreenWidth = getContext().getResources().getDisplayMetrics().widthPixels;
-        LinearLayout.LayoutParams localObject = new LinearLayout.LayoutParams(mScreenWidth, (int) (7.0F * (mScreenWidth / 16.0F)));
+        int mScreenHeight = getContext().getResources().getDisplayMetrics().heightPixels;
+        LinearLayout.LayoutParams localObject = new LinearLayout.LayoutParams(mScreenHeight, (int) (percentWidth * mScreenHeight ));
         setHeaderLayoutParams(localObject);
     }
 
